@@ -32,11 +32,18 @@ class ViewController: UIViewController {
         
         UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             self.view_cake.layer.cornerRadius = self.isOpen ? 0 : self.view_cake.frame.height/2
+            
         }) { (complete) in
             self.isOpen = !self.isOpen
             self.bton_cake.isEnabled = true
         }
     }
     
+}
+
+extension UIColor{
+    func Color(R:Float,G:Float,B:Float,A:Float) -> UIColor {
+        return UIColor.init(red: CGFloat(R/255.0), green: CGFloat(G/255.0), blue: CGFloat(B/255.0), alpha: CGFloat(A))
+    }
 }
 
